@@ -8,11 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
     <style>
-        /* --- 1. SETUP & VARS --- */
         :root {
             --navy: #1B3C73;       
             --deep-navy: #0F254A;
@@ -32,111 +30,77 @@
             overflow-x: hidden;
             line-height: 1.7;
             background-color: var(--soft-blue);
-            
-            /* --- BACKGROUND FIX: POLA BUNGA BATIK/DAMASK (PASTI BUKAN LOVE) --- */
+
+            /* --- BACKGROUND FIX: POLA BUNGA MURNI (DAMASK) --- */
             background-image: 
-                /* Layer 1: Motif Bunga Klasik (Damask) */
+                /* Layer 1: Pola Bunga Batik/Damask (PASTI BUKAN HATI) */
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B3C73' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
-                
                 /* Layer 2: Tekstur Kertas Halus */
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231B3C73' fill-opacity='0.03' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%231B3C73' fill-opacity='0.02' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
         }
 
         h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--navy); }
-        
-        .script-font { 
-            font-family: 'Great Vibes', cursive; 
-            font-weight: 400;
-            text-shadow: 1px 1px 2px rgba(197, 160, 89, 0.3);
-        }
+        .script-font { font-family: 'Great Vibes', cursive; font-weight: 400; text-shadow: 1px 1px 2px rgba(197, 160, 89, 0.3); }
 
-        /* --- ORNAMEN MELAYU (SVG) --- */
         .malay-divider {
             height: 50px;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath fill='%23C5A059' fill-opacity='0.4' d='M0,60 C150,90 250,30 400,60 C550,90 650,30 800,60 C950,90 1050,30 1200,60 L1200,65 C1050,35 950,95 800,65 C650,35 550,95 400,65 C250,35 150,95 0,65 Z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100% 100%;
-            margin: 30px auto;
-            max-width: 80%;
+            background-repeat: no-repeat; background-position: center; background-size: 100% 100%; margin: 30px auto; max-width: 80%;
         }
 
-        /* --- 2. SAMPUL DEPAN --- */
-        #cover-section {
+       #cover-section {
             position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-            /* Background Bunga Sudut */
             background-color: var(--soft-blue);
+            
+            /* MULTIPLE BACKGROUND FLOWERS */
             background-image: 
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.5' opacity='0.35'%3E%3Cpath d='M102.5,236.3c-9.1-23.8-28.5-50.7-57.9-67.3C3.2,162.1-20.5,211.7,45.2,289c34.4,40.5,68.8,42.5,89.3,38.3 c-5.9-17.9-12.6-40.4-18.8-66.9C112.2,249.9,108.3,243.1,102.5,236.3z'/%3E%3Cpath d='M159.6,151.6c-23.2,6.2-58.1,8.1-90.8-12.1C26.2,113.2,43.7,56.9,142.8,37.3c51.9-10.2,78.7,8.2,91.7,21.6 c-12.3,13.9-29.8,30.4-54.6,46.6C171.2,111.2,164.8,117.6,159.6,151.6z'/%3E%3Cpath d='M253.8,204.3c3.7-19.5,2.3-47.8-14.1-71.5c-23-33.2-80.4-33.6-117.5,59.2c-19.4,48.5-8.9,76.3,2.8,92.2 c16.5-6.2,38.8-16,69.6-27.6C216.6,248.4,224.1,244,253.8,204.3z'/%3E%3C/g%3E%3C/svg%3E"),
-                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500' transform='rotate(180)'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.5' opacity='0.35'%3E%3Cpath d='M102.5,236.3c-9.1-23.8-28.5-50.7-57.9-67.3C3.2,162.1-20.5,211.7,45.2,289c34.4,40.5,68.8,42.5,89.3,38.3 c-5.9-17.9-12.6-40.4-18.8-66.9C112.2,249.9,108.3,243.1,102.5,236.3z'/%3E%3Cpath d='M159.6,151.6c-23.2,6.2-58.1,8.1-90.8-12.1C26.2,113.2,43.7,56.9,142.8,37.3c51.9-10.2,78.7,8.2,91.7,21.6 c-12.3,13.9-29.8,30.4-54.6,46.6C171.2,111.2,164.8,117.6,159.6,151.6z'/%3E%3Cpath d='M253.8,204.3c3.7-19.5,2.3-47.8-14.1-71.5c-23-33.2-80.4-33.6-117.5,59.2c-19.4,48.5-8.9,76.3,2.8,92.2 c16.5-6.2,38.8-16,69.6-27.6C216.6,248.4,224.1,244,253.8,204.3z'/%3E%3C/g%3E%3C/svg%3E"),
+                /* Bunga Kiri Atas */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.2' opacity='0.4'%3E%3Cpath d='M102,236c-9-23-28-50-57-67C3,162-20,211,45,289c34,40,68,42,89,38c-5-17-12-40-18-66'/%3E%3Cpath d='M159,151c-23,6-58,8-90-12C26,113,43,56,142,37c51-10,78,8,91,21c-12,13-29,30-54,46'/%3E%3Cpath d='M253,204c3-19,2-47-14-71c-23-33-80-33-117,59c-19,48-8,76,2,92c16-6,38-16,69-27'/%3E%3C/g%3E%3C/svg%3E"),
+                /* Bunga Kanan Atas */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.2' opacity='0.4' transform='rotate(90, 250, 250)'%3E%3Cpath d='M102,236c-9-23-28-50-57-67C3,162-20,211,45,289c34,40,68,42,89,38c-5-17-12-40-18-66'/%3E%3Cpath d='M159,151c-23,6-58,8-90-12C26,113,43,56,142,37c51-10,78,8,91,21c-12,13-29,30-54,46'/%3E%3C/g%3E%3C/svg%3E"),
+                /* Bunga Kiri Bawah */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.2' opacity='0.4' transform='rotate(-90, 250, 250)'%3E%3Cpath d='M102,236c-9-23-28-50-57-67C3,162-20,211,45,289c34,40,68,42,89,38c-5-17-12-40-18-66'/%3E%3Cpath d='M159,151c-23,6-58,8-90-12C26,113,43,56,142,37c51-10,78,8,91,21c-12,13-29,30-54,46'/%3E%3C/g%3E%3C/svg%3E"),
+                /* Bunga Kanan Bawah */
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'%3E%3Cg fill='none' stroke='%231B3C73' stroke-width='1.2' opacity='0.4' transform='rotate(180, 250, 250)'%3E%3Cpath d='M102,236c-9-23-28-50-57-67C3,162-20,211,45,289c34,40,68,42,89,38c-5-17-12-40-18-66'/%3E%3Cpath d='M159,151c-23,6-58,8-90-12C26,113,43,56,142,37c51-10,78,8,91,21c-12,13-29,30-54,46'/%3E%3C/g%3E%3C/svg%3E"),
                 radial-gradient(circle at center, rgba(255,255,255,0.95) 0%, rgba(235,245,255,0.9) 100%);
-            background-position: top left, bottom right, center;
+
+            background-position: top left, top right, bottom left, bottom right, center;
             background-repeat: no-repeat;
-            background-size: 300px auto, 300px auto, cover;
+            background-size: 380px auto, 350px auto, 350px auto, 380px auto, cover;
+            
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             z-index: 0; text-align: center; padding: 20px;
         }
 
-        /* --- STYLE KHUSUS FOTO --- */
         .cover-photo-frame {
-            width: 220px; height: 320px;
-            margin: 15px auto;
-            position: relative; z-index: 2;
-            border-radius: 120px 120px 20px 20px; /* Kubah */
-            border: 3px solid var(--gold);
-            padding: 5px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            background: rgba(255,255,255,0.6);
+            width: 220px; height: 320px; margin: 15px auto; position: relative; z-index: 2;
+            border-radius: 120px 120px 20px 20px; border: 3px solid var(--gold); padding: 5px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15); background: rgba(255,255,255,0.6);
         }
-        .cover-photo-frame img {
-            width: 100%; height: 100%; object-fit: cover;
-            border-radius: 115px 115px 15px 15px;
-        }
+        .cover-photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 115px 115px 15px 15px; }
 
         .body-photo-frame {
-            width: 100%; max-width: 300px; height: 400px;
-            margin: 0 auto 30px auto;
-            border: 2px solid var(--gold);
-            padding: 6px;
-            border-radius: 150px 150px 0 0; /* Jendela */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100%; max-width: 300px; height: 400px; margin: 0 auto 30px auto; border: 2px solid var(--gold);
+            padding: 6px; border-radius: 150px 150px 0 0; box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .body-photo-frame img {
-            width: 100%; height: 100%; object-fit: cover;
-            border-radius: 145px 145px 0 0;
-            display: block;
-        }
+        .body-photo-frame img { width: 100%; height: 100%; object-fit: cover; border-radius: 145px 145px 0 0; display: block; }
 
-        .couple-name-cover {
-            font-size: 4rem; line-height: 1.1; margin: 10px 0; color: var(--navy);
-            animation: float 4s ease-in-out infinite;
-        }
+        .couple-name-cover { font-size: 4rem; line-height: 1.1; margin: 10px 0; color: var(--navy); animation: float 4s ease-in-out infinite; }
         @keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
 
-        /* --- 3. KONTEN UTAMA --- */
         #main-content {
-            position: relative; z-index: 10; margin-top: 100vh;
-            background-color: var(--white);
-            
-            /* Pola Bunga Batik (Sama dengan Body tapi lebih tegas) */
+            position: relative; z-index: 10; margin-top: 100vh; background-color: var(--white);
             background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B3C73' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            
-            background-size: 60px 60px;
-            border-top-left-radius: 40px; border-top-right-radius: 40px;
-            box-shadow: 0 -10px 40px rgba(0,0,0,0.1);
-            padding-bottom: 50px; overflow: hidden;
-            border-top: 4px solid var(--gold);
+            background-size: 60px 60px; border-top-left-radius: 40px; border-top-right-radius: 40px;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.1); padding-bottom: 50px; overflow: hidden; border-top: 4px solid var(--gold);
         }
 
         section { padding: 80px 20px; position: relative; z-index: 5; text-align: center; max-width: 800px; margin: 0 auto; }
 
         .card {
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid rgba(197, 160, 89, 0.4);
-            border-radius: 20px; padding: 50px 30px;
-            box-shadow: 0 15px 40px rgba(27, 60, 115, 0.1);
-            margin: 40px 0; position: relative; overflow: hidden;
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.95); border: 1px solid rgba(197, 160, 89, 0.4);
+            border-radius: 20px; padding: 50px 30px; box-shadow: 0 15px 40px rgba(27, 60, 115, 0.1);
+            margin: 40px 0; position: relative; overflow: hidden; backdrop-filter: blur(5px);
         }
 
         .card::after {
@@ -144,52 +108,39 @@
             border: 2px solid var(--gold); opacity: 0.2; border-radius: 15px; pointer-events: none;
         }
 
-        .card-bank { background: #ffffff !important; border: 2px solid var(--gold) !important; }
+        .card-bank { background: #ffffff !important; border: 2px solid var(--gold) !important; margin-bottom: 20px; }
 
-        /* TEKS NOMOR REKENING (FIXED: BUKAN MONOSPACE) */
         .norek-text {
-            margin: 25px 0; 
-            font-family: 'Cormorant Garamond', serif; /* Font biasa elegan */
-            font-size: 2.5rem; 
-            letter-spacing: 1px; 
-            color: var(--navy); 
-            font-weight: bold;
+            margin: 15px 0; font-family: 'Cormorant Garamond', serif; 
+            font-size: 2.2rem; letter-spacing: 1px; color: var(--navy); font-weight: bold;
         }
 
-        /* BUTTONS */
         .btn {
-            text-decoration: none; display: inline-block; padding: 15px 40px;
-            border-radius: 50px; font-weight: 600; transition: all 0.4s ease;
-            text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;
-            min-width: 220px; cursor: pointer; border: 2px solid var(--navy);
+            text-decoration: none; display: inline-block; padding: 15px 40px; border-radius: 50px;
+            font-weight: 600; transition: all 0.4s ease; text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.85rem; min-width: 220px; cursor: pointer; border: 2px solid var(--navy);
             position: relative; overflow: hidden; z-index: 1; font-family: 'Playfair Display', serif;
         }
         .btn-primary { background-color: var(--navy); color: white; }
         .btn-outline { background-color: transparent; color: var(--navy); }
         .btn:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.15); background: var(--gold); border-color: var(--gold); color: white; }
 
-        /* FORM */
         input, select, textarea {
-            width: 100%; padding: 15px; border: 2px solid #e0e6ed;
-            border-radius: 8px; font-family: 'Cormorant Garamond', serif;
-            font-size: 1.1rem; background: #fcfcfc; transition: 0.3s; margin-bottom: 15px;
+            width: 100%; padding: 15px; border: 2px solid #e0e6ed; border-radius: 8px;
+            font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; background: #fcfcfc; transition: 0.3s; margin-bottom: 15px;
         }
-        input:focus { border-color: var(--navy); }
         label { display: block; text-align: left; font-weight: bold; color: var(--navy); margin-bottom: 5px; }
 
-        /* FOOTER */
         footer {
             background-color: var(--navy);
-            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20L0 40h40L20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            color: white; padding: 80px 20px 50px 20px;
-            text-align: center; border-top: 5px solid var(--gold);
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20L0 40h40L20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            color: white; padding: 80px 20px 50px 20px; text-align: center; border-top: 5px solid var(--gold);
         }
 
         @media (max-width: 768px) {
-            .couple-name-cover { font-size: 3.5rem; }
-            .btn { width: 100%; }
-            .cover-photo-frame { width: 200px; height: 280px; }
-            .body-photo-frame { height: 350px; }
+            .couple-name-cover { font-size: 3.5rem; } .btn { width: 100%; }
+            .cover-photo-frame { width: 200px; height: 280px; } .body-photo-frame { height: 350px; }
+            .norek-text { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -197,17 +148,11 @@
 
     <div id="cover-section">
         <h3 data-aos="fade-down" data-aos-duration="1500" style="letter-spacing: 4px; font-size: 0.9rem; text-transform: uppercase; color: var(--gold);">The Wedding of</h3>
-        
         <div class="cover-photo-frame" data-aos="zoom-in" data-aos-duration="2000">
             <img src="foto_utama.webp" alt="Rachman & Nenny" onerror="this.style.display='none'">
         </div>
-
         <h1 class="couple-name-cover script-font" data-aos="fade-up" data-aos-delay="300">Rachman <br>&<br> Nenny</h1>
-        
-        <p data-aos="fade-up" data-aos-delay="500" style="font-size: 1.3rem; margin-top: 10px; color: var(--navy); font-weight: bold; letter-spacing: 2px;">
-            29 Maret 2026
-        </p>
-        
+        <p data-aos="fade-up" data-aos-delay="500" style="font-size: 1.3rem; margin-top: 10px; color: var(--navy); font-weight: bold; letter-spacing: 2px;">29 Maret 2026</p>
         <div data-aos="fade-up" data-aos-delay="800" style="position: absolute; bottom: 30px; animation: bounce 2s infinite; color: var(--navy); text-align: center;">
             <p style="font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 5px;">SCROLL DOWN</p>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
@@ -215,37 +160,26 @@
     </div>
 
     <div id="main-content">
-        
         <section style="padding-top: 100px;">
             <div class="card" style="margin-top:0; padding: 40px 20px;" data-aos="zoom-in" data-aos-duration="1500">
-                <p class="arabic-text" dir="rtl" style="font-size: 1.6rem; line-height: 2.2; color: var(--navy); font-weight: bold;">
-                    وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ
-                </p>
+                <p class="arabic-text" dir="rtl">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
                 <p style="font-size: 1rem; font-style: italic; color: var(--gray); margin-top: 15px;">
                     "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir."
                     <br><strong style="color: var(--navy); display: block; margin-top: 10px;">(Q.S. Ar-Rum: 21)</strong>
                 </p>
             </div>
-
             <div class="malay-divider" data-aos="fade-up"></div>
-
             <div data-aos="fade-up">
                 <p style="font-style: italic; color: var(--navy); font-weight: 600; font-size: 1.2rem;">Assalamualaikum Warahmatullahi Wabarakatuh</p>
                 <br>
                 <p>Dengan memohon Rahmat dan Ridho Allah SWT, kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara resepsi pernikahan kami:</p>
             </div>
-            
-            <div class="card" data-aos="flip-left" data-aos-duration="1500" style="padding: 60px 30px;">
+            <div class="card" data-aos="flip-left" data-aos-duration="1500">
                 <div class="body-photo-frame" data-aos="zoom-in">
                     <img src="foto_body.webp" alt="Mempelai" onerror="this.style.display='none'">
                 </div>
-
                 <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-right">Hj. Rachman Wibisono SE</h2>
-                
-                <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin: 15px 0; font-style: italic;" data-aos="zoom-in">
-                    &
-                </div>
-                
+                <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin: 15px 0; font-style: italic;" data-aos="zoom-in">&</div>
                 <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-left">Nenny Mahriza Siregar SE</h2>
             </div>
         </section>
@@ -253,21 +187,18 @@
         <section>
             <h2 class="serif" data-aos="fade-down">Save The Date</h2>
             <div class="card" data-aos="fade-up" data-aos-duration="1500">
-                <h3 style="letter-spacing: 3px; font-size: 1.2rem; text-transform: uppercase; color: var(--gold);" data-aos="zoom-in">Resepsi Pernikahan</h3>
-                <div class="malay-divider" style="height: 30px; margin: 20px auto; opacity: 0.6;" data-aos="zoom-in"></div>
-                
+                <h3 style="letter-spacing: 3px; font-size: 1.2rem; text-transform: uppercase; color: var(--gold);">Resepsi Pernikahan</h3>
+                <div class="malay-divider" style="height: 30px; margin: 20px auto; opacity: 0.6;"></div>
                 <div data-aos="fade-up" data-aos-delay="300">
                     <p style="font-size: 1.8rem; color: var(--navy); font-weight: 700; font-family: 'Playfair Display', serif;">Minggu, 29 Maret 2026</p>
                     <p style="margin-bottom: 30px; font-size: 1.1rem;">Pukul 10.00 WIB - 15.00 WIB</p>
                 </div>
-                
                 <div data-aos="fade-up" data-aos-delay="500">
                     <p style="font-weight: bold; font-size: 1.3rem; color: var(--navy);">Gedung Auditorium Universitas Budi Luhur</p>
                     <p style="font-size: 1.1rem; margin-bottom: 40px; color: var(--gray);">Jl. Ciledug Raya, RT.10/RW.2, Petukangan Utara, Jakarta Selatan</p>
                 </div>
-                
                 <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
-                    <a href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Auditorium+Universitas+Budi+Luhur+Jakarta+Selatan" class="btn btn-outline" target="_blank" data-aos="zoom-in-left">Petunjuk Arah Google Maps</a>
+                    <a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.255928813735!2d106.75544837592652!3d-6.229956461011867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f0e4b6732959%3A0x8677f5255476d054!2sUniversitas%20Budi%20Luhur!5e0!3m2!1sid!2sid!4v1705497000000!5m2!1sid!2sid1" class="btn btn-outline" target="_blank" data-aos="zoom-in-left">Petunjuk Arah Google Maps</a>
                     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Rachman+Nenny&dates=20260329T040000Z/20260329T060000Z&details=Resepsi&location=Universitas+Budi+Luhur" target="_blank" class="btn btn-primary" data-aos="zoom-in-right">Simpan Tanggal</a>
                 </div>
             </div>
@@ -276,15 +207,19 @@
         <section>
             <h2 class="serif" data-aos="fade-down">Wedding Gift</h2>
             <p data-aos="fade-up">Doa restu Anda merupakan karunia yang sangat berarti bagi kami.</p>
-            
             <div class="card card-bank" data-aos="flip-right" data-aos-duration="1500">
                 <p style="letter-spacing: 3px; font-size: 1rem; opacity: 0.8; color: var(--navy); font-weight: bold;">PT BANK HSBC INDONESIA</p>
-                
-                <h2 class="norek-text" data-aos="zoom-in">900000464734</h2>
-                
-                <p style="font-weight: bold; font-size: 1.2rem; color: var(--navy);">a.n Rachman Wibisono</p>
+                <h2 class="norek-text">900000464734</h2>
+                <p style="font-weight: bold; font-size: 1.1rem; color: var(--navy);">a.n Rachman Wibisono</p>
                 <br>
-                <button onclick="copyNorek()" class="btn btn-primary" style="min-width: auto; padding: 12px 35px;" data-aos="fade-up">Salin Nomor Rekening</button>
+                <button onclick="copyText('900000464734')" class="btn btn-primary" style="min-width: auto; padding: 12px 35px;">Salin Rekening</button>
+            </div>
+            <div class="card card-bank" data-aos="flip-left" data-aos-duration="1500">
+                <p style="letter-spacing: 3px; font-size: 1rem; opacity: 0.8; color: var(--navy); font-weight: bold;">BANK CENTRAL ASIA (BCA)</p>
+                <h2 class="norek-text">0751392591</h2>
+                <p style="font-weight: bold; font-size: 1.1rem; color: var(--navy);">a.n Nenny Mahriza</p>
+                <br>
+                <button onclick="copyText('0751392591')" class="btn btn-primary" style="min-width: auto; padding: 12px 35px;">Salin Rekening</button>
             </div>
         </section>
 
@@ -292,35 +227,13 @@
             <h2 class="serif" data-aos="fade-down">RSVP</h2>
             <p data-aos="fade-up">Mohon konfirmasi kehadiran Anda.</p>
             <div class="malay-divider" data-aos="fade-up"></div>
-            
             <div class="card" data-aos="fade-up" data-aos-duration="1500">
                 <form id="rsvpForm" onsubmit="submitToGoogle(event)">
-                    <div data-aos="fade-right">
-                        <label>Nama Lengkap</label>
-                        <input type="text" id="nama" required placeholder="Masukkan Nama Anda">
-                    </div>
-                    <div data-aos="fade-left">
-                        <label>Keterangan Kehadiran</label>
-                        <select id="keterangan" required>
-                            <option value="" disabled selected>Pilih Keterangan</option>
-                            <option value="Saya Akan Hadir">Saya Akan Hadir</option>
-                            <option value="Maaf, Belum Bisa Hadir">Maaf, Belum Bisa Hadir</option>
-                        </select>
-                    </div>
-                    <div data-aos="fade-right">
-                        <label>Jumlah Pax</label>
-                        <select id="pax" required>
-                            <option value="1 PAX">1 Orang</option>
-                            <option value="2 PAX">2 Orang</option>
-                        </select>
-                    </div>
-                    <div data-aos="fade-left">
-                        <label>Ucapan & Doa</label>
-                        <textarea id="ucapan" rows="3" placeholder="Tuliskan ucapan Anda..."></textarea>
-                    </div>
-                    <div data-aos="zoom-in-up" style="margin-top: 30px;">
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Konfirmasi</button>
-                    </div>
+                    <div data-aos="fade-right"><label>Nama Lengkap</label><input type="text" id="nama" required placeholder="Masukkan Nama Anda"></div>
+                    <div data-aos="fade-left"><label>Keterangan Kehadiran</label><select id="keterangan" required><option value="" disabled selected>Pilih Keterangan</option><option value="Saya Akan Hadir">Saya Akan Hadir</option><option value="Maaf, Belum Bisa Hadir">Maaf, Belum Bisa Hadir</option></select></div>
+                    <div data-aos="fade-right"><label>Jumlah Pax</label><select id="pax" required><option value="1 PAX">1 Orang</option><option value="2 PAX">2 Orang</option></select></div>
+                    <div data-aos="fade-left"><label>Ucapan & Doa</label><textarea id="ucapan" rows="3" placeholder="Tuliskan ucapan Anda..."></textarea></div>
+                    <div data-aos="zoom-in-up" style="margin-top: 30px;"><button type="submit" class="btn btn-primary" style="width: 100%;">Kirim Konfirmasi</button></div>
                     <p id="loading" style="display:none; color: var(--navy); margin-top:10px;">Mengirim data...</p>
                 </form>
             </div>
@@ -328,76 +241,77 @@
 
         <footer>
             <h2 class="script-font" style="font-size: 3.5rem; color: var(--gold);" data-aos="zoom-in">Rachman & Nenny</h2>
-            <p style="font-size: 1.1rem; margin-top: 25px;" data-aos="fade-up">Terima kasih atas doa & restu Anda</p>
+            <p style="font-size: 1.1rem; margin-top: 25px;">Terima kasih atas doa & restu Anda</p>
         </footer>
     </div>
 
-    <audio id="lagu" loop autoplay>
+    <audio id="lagu" loop>
         <source src="lagu_wed.mp3" type="audio/mpeg">
     </audio>
-    <div style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer; border: 2px solid var(--gold);" onclick="toggleLagu()" data-aos="zoom-in" data-aos-delay="1500">
-        <svg id="icon-music" style="width: 24px; height: 24px; fill: var(--navy);" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+
+    <div id="music-control" style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer; border: 2px solid var(--gold);" onclick="toggleLagu()">
+        <svg id="icon-music" style="width: 24px; height: 24px; fill: var(--navy); transition: 0.3s;" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
     </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true, offset: 120 });
-
+        
         const lagu = document.getElementById('lagu');
         let isPlaying = false;
+
+        function playLagu() {
+            if (!isPlaying) {
+                lagu.play().then(() => {
+                    isPlaying = true;
+                    document.getElementById('icon-music').style.animation = "spin 3s linear infinite";
+                }).catch(e => console.log("Menunggu interaksi user..."));
+            }
+        }
 
         function toggleLagu() {
             if (isPlaying) {
                 lagu.pause();
                 isPlaying = false;
+                document.getElementById('icon-music').style.animation = "none";
             } else {
                 lagu.play();
                 isPlaying = true;
+                document.getElementById('icon-music').style.animation = "spin 3s linear infinite";
             }
         }
 
-        // COBA PUTAR LANGSUNG SAAT LOAD
-        window.onload = function() {
-            lagu.play().then(() => {
-                isPlaying = true;
-            }).catch((e) => {
-                console.log("Autoplay ditahan browser, menunggu interaksi.");
-            });
-        };
+        // AUTO PLAY: Picu saat pertama kali user berinteraksi
+        window.addEventListener('scroll', playLagu, { once: true });
+        window.addEventListener('click', playLagu, { once: true });
+        window.addEventListener('touchstart', playLagu, { once: true });
 
-        // EVENT LISTENERS UNTUK MEMASTIKAN LAGU BERBUNYI
-        window.addEventListener('click', () => { if(!isPlaying) toggleLagu(); }, { once: true });
-        window.addEventListener('scroll', () => { if(!isPlaying) toggleLagu(); }, { once: true });
-        window.addEventListener('touchstart', () => { if(!isPlaying) toggleLagu(); }, { once: true });
-
-        function copyNorek() {
-            navigator.clipboard.writeText('900000464734'); 
-            alert('Nomor Rekening Disalin');
+        function copyText(text) {
+            navigator.clipboard.writeText(text); 
+            alert('Nomor Rekening Disalin: ' + text);
         }
 
         const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSczUN4ZuescPJ49AF0Xcl-0b3dh7Q8cn_2bYkbU9PU4eTANGA/formResponse";
-        const DATA_ENTRY_IDS = {
-            nama: "entry.42363737", ucapan: "entry.613581775", pax: "entry.1423931582", keterangan: "entry.70947393"
-        };
+        const DATA_ENTRY_IDS = { nama: "entry.42363737", ucapan: "entry.613581775", pax: "entry.1423931582", keterangan: "entry.70947393" };
 
         function submitToGoogle(e) {
             e.preventDefault();
             const btn = e.target.querySelector("button[type='submit']");
             const loading = document.getElementById("loading");
-            
             btn.disabled = true; btn.innerText = "Mengirim..."; loading.style.display = "block";
-
             const formData = new FormData();
             formData.append(DATA_ENTRY_IDS.nama, document.getElementById("nama").value);
             formData.append(DATA_ENTRY_IDS.keterangan, document.getElementById("keterangan").value);
             formData.append(DATA_ENTRY_IDS.pax, document.getElementById("pax").value);
             formData.append(DATA_ENTRY_IDS.ucapan, document.getElementById("ucapan").value);
-
             fetch(GOOGLE_FORM_URL, { method: "POST", mode: "no-cors", body: formData })
             .then(() => { alert("Terima kasih! Konfirmasi terkirim."); document.getElementById("rsvpForm").reset(); })
-            .catch((error) => { alert("Gagal mengirim."); })
+            .catch(() => { alert("Gagal mengirim."); })
             .finally(() => { btn.disabled = false; btn.innerText = "Kirim Konfirmasi"; loading.style.display = "none"; });
         }
     </script>
+    <style>
+        @keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+    </style>
 </body>
 </html>
