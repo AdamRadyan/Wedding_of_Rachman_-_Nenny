@@ -33,7 +33,7 @@
             line-height: 1.7;
             background-color: var(--soft-blue);
             
-            /* --- BACKGROUND FIX: POLA BUNGA BATIK/DAMASK (BUKAN LOVE) --- */
+            /* --- BACKGROUND FIX: POLA BUNGA BATIK/DAMASK (PASTI BUKAN LOVE) --- */
             background-image: 
                 /* Layer 1: Motif Bunga Klasik (Damask) */
                 url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231B3C73' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
@@ -146,6 +146,16 @@
 
         .card-bank { background: #ffffff !important; border: 2px solid var(--gold) !important; }
 
+        /* TEKS NOMOR REKENING (FIXED: BUKAN MONOSPACE) */
+        .norek-text {
+            margin: 25px 0; 
+            font-family: 'Cormorant Garamond', serif; /* Font biasa elegan */
+            font-size: 2.5rem; 
+            letter-spacing: 1px; 
+            color: var(--navy); 
+            font-weight: bold;
+        }
+
         /* BUTTONS */
         .btn {
             text-decoration: none; display: inline-block; padding: 15px 40px;
@@ -226,7 +236,6 @@
             </div>
             
             <div class="card" data-aos="flip-left" data-aos-duration="1500" style="padding: 60px 30px;">
-                
                 <div class="body-photo-frame" data-aos="zoom-in">
                     <img src="foto_body.webp" alt="Mempelai" onerror="this.style.display='none'">
                 </div>
@@ -259,7 +268,6 @@
                 
                 <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
                     <a href="https://www.google.com/maps/dir/?api=1&destination=Gedung+Auditorium+Universitas+Budi+Luhur+Jakarta+Selatan" class="btn btn-outline" target="_blank" data-aos="zoom-in-left">Petunjuk Arah Google Maps</a>
-                    
                     <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Rachman+Nenny&dates=20260329T040000Z/20260329T060000Z&details=Resepsi&location=Universitas+Budi+Luhur" target="_blank" class="btn btn-primary" data-aos="zoom-in-right">Simpan Tanggal</a>
                 </div>
             </div>
@@ -271,7 +279,9 @@
             
             <div class="card card-bank" data-aos="flip-right" data-aos-duration="1500">
                 <p style="letter-spacing: 3px; font-size: 1rem; opacity: 0.8; color: var(--navy); font-weight: bold;">PT BANK HSBC INDONESIA</p>
-                <h2 style="margin: 25px 0; font-family: monospace; font-size: 2.5rem; letter-spacing: 2px; color: var(--navy); font-weight: bold;" data-aos="zoom-in">900000464734</h2>
+                
+                <h2 class="norek-text" data-aos="zoom-in">900000464734</h2>
+                
                 <p style="font-weight: bold; font-size: 1.2rem; color: var(--navy);">a.n Rachman Wibisono</p>
                 <br>
                 <button onclick="copyNorek()" class="btn btn-primary" style="min-width: auto; padding: 12px 35px;" data-aos="fade-up">Salin Nomor Rekening</button>
@@ -322,7 +332,7 @@
         </footer>
     </div>
 
-    <audio id="lagu" loop>
+    <audio id="lagu" loop autoplay>
         <source src="lagu_wed.mp3" type="audio/mpeg">
     </audio>
     <div style="position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); z-index: 100; cursor: pointer; border: 2px solid var(--gold);" onclick="toggleLagu()" data-aos="zoom-in" data-aos-delay="1500">
@@ -341,23 +351,24 @@
                 lagu.pause();
                 isPlaying = false;
             } else {
-                lagu.play().then(() => {
-                    isPlaying = true;
-                }).catch((err) => {
-                    console.log("Browser menahan autoplay, menunggu interaksi user.");
-                });
+                lagu.play();
+                isPlaying = true;
             }
         }
 
-        // Coba putar saat scroll
-        window.addEventListener('scroll', function() {
-            if(!isPlaying) toggleLagu();
-        }, { once: true });
+        // COBA PUTAR LANGSUNG SAAT LOAD
+        window.onload = function() {
+            lagu.play().then(() => {
+                isPlaying = true;
+            }).catch((e) => {
+                console.log("Autoplay ditahan browser, menunggu interaksi.");
+            });
+        };
 
-        // Coba putar saat klik (backup)
-        window.addEventListener('click', function() {
-            if(!isPlaying) toggleLagu();
-        }, { once: true });
+        // EVENT LISTENERS UNTUK MEMASTIKAN LAGU BERBUNYI
+        window.addEventListener('click', () => { if(!isPlaying) toggleLagu(); }, { once: true });
+        window.addEventListener('scroll', () => { if(!isPlaying) toggleLagu(); }, { once: true });
+        window.addEventListener('touchstart', () => { if(!isPlaying) toggleLagu(); }, { once: true });
 
         function copyNorek() {
             navigator.clipboard.writeText('900000464734'); 
