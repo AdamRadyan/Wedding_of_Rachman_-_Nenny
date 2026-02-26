@@ -131,6 +131,14 @@
         }
         label { display: block; text-align: left; font-weight: bold; color: var(--navy); margin-bottom: 5px; }
 
+        .story-timeline { text-align: left; position: relative; padding-left: 20px; border-left: 2px solid var(--gold); margin-top: 20px; }
+        .story-item { margin-bottom: 25px; position: relative; }
+        .story-item::before {
+            content: ''; position: absolute; left: -26px; top: 5px; width: 10px; height: 10px;
+            background: var(--navy); border-radius: 50%; border: 3px solid white; box-shadow: 0 0 0 2px var(--gold);
+        }
+        .story-year { font-family: 'Playfair Display', serif; font-weight: bold; color: var(--navy); font-size: 1.2rem; margin-bottom: 5px; }
+
         footer {
             background-color: var(--navy);
             background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M20 20L0 40h40L20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
@@ -151,7 +159,7 @@
         <div class="cover-photo-frame" data-aos="zoom-in" data-aos-duration="2000">
             <img src="foto_utama.webp" alt="Rachman & Nenny" onerror="this.style.display='none'">
         </div>
-        <h1 class="couple-name-cover script-font" data-aos="fade-up" data-aos-delay="300">Rachman <br>&<br> Nenny</h1>
+        <h1 class="couple-name-cover script-font" data-aos="fade-up" data-aos-delay="300"> Nenny<br>&<br> Rachman</h1>
         <p data-aos="fade-up" data-aos-delay="500" style="font-size: 1.3rem; margin-top: 10px; color: var(--navy); font-weight: bold; letter-spacing: 2px;">29 Maret 2026</p>
         <div data-aos="fade-up" data-aos-delay="800" style="position: absolute; bottom: 30px; animation: bounce 2s infinite; color: var(--navy); text-align: center;">
             <p style="font-size: 0.8rem; letter-spacing: 3px; margin-bottom: 5px;">SCROLL DOWN</p>
@@ -168,6 +176,33 @@
                     <br><strong style="color: var(--navy); display: block; margin-top: 10px;">(Q.S. Ar-Rum: 21)</strong>
                 </p>
             </div>
+
+            <div class="card" data-aos="fade-up" data-aos-duration="1500" style="padding: 40px 30px;">
+                <h2 class="script-font" style="font-size: 3rem; color: var(--gold); margin-bottom: 20px;">Kisah Kami</h2>
+                <div class="story-timeline">
+                    <div class="story-item" data-aos="fade-up">
+                        <div class="story-year">1991 - 1995</div>
+                        <p>Berawal dari pertemuan di Fakultas Ekonomi Universitas Prof. Dr Moestopo... walaupun hanya sebatas teman, namun hati kami telah terikat dalam benih cinta yang tumbuh perlahan...</p>
+                    </div>
+                    <div class="story-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="story-year">1997 - 2025</div>
+                        <p>Beberapa tahun berlalu... kami masih menjaga hubungan. Namun... kesibukan hidup membuat kami terpisah.</p>
+                    </div>
+                    <div class="story-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="story-year">Agustus 2025</div>
+                        <p>Takdir membawa kami kembali bersama.... dalam suasana rindu yang tak terhingga dan hati yang kembali berdetak bersama.</p>
+                    </div>
+                    <div class="story-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="story-year">25 Januari 2026</div>
+                        <p>Kami saling mengikat diri dalam tali pertunangan....</p>
+                    </div>
+                    <div class="story-item" data-aos="fade-up" data-aos-delay="400">
+                        <div class="story-year">29 Maret 2026</div>
+                        <p>InsyaAllah... perjalanan cinta ini dipersatukan dengan indah. Kami berdo'a..., Insya Allah kami dapat menjalani hidup bersama dengan cinta yang selalu bersemi....</p>
+                    </div>
+                </div>
+            </div>
+
             <div class="malay-divider" data-aos="fade-up"></div>
             <div data-aos="fade-up">
                 <p style="font-style: italic; color: var(--navy); font-weight: 600; font-size: 1.2rem;">Assalamualaikum Warahmatullahi Wabarakatuh</p>
@@ -178,9 +213,9 @@
                 <div class="body-photo-frame" data-aos="zoom-in">
                     <img src="foto_body.webp" alt="Mempelai" onerror="this.style.display='none'">
                 </div>
-                <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-right">Hj. Rachman Wibisono SE</h2>
+                <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-right">Nenny Mahriza Siregar SE</h2>
                 <div style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold); margin: 15px 0; font-style: italic;" data-aos="zoom-in">&</div>
-                <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-left">Nenny Mahriza Siregar SE</h2>
+                <h2 style="font-size: 2.3rem;" class="script-font" data-aos="fade-left">H. Rachman Wibisono SE</h2>
             </div>
         </section>
 
@@ -224,6 +259,13 @@
         </section>
 
         <section>
+            <h2 class="serif" data-aos="fade-down">Denah Acara</h2>
+            <div class="card" data-aos="zoom-in" data-aos-duration="1500" style="padding: 20px;">
+                <img src="denah_acara.jpg" alt="Denah Lokasi Acara" style="width: 100%; height: auto; border-radius: 10px; border: 2px solid var(--gold); display: block;">
+            </div>
+        </section>
+
+        <section>
             <h2 class="serif" data-aos="fade-down">RSVP</h2>
             <p data-aos="fade-up">Mohon konfirmasi kehadiran Anda.</p>
             <div class="malay-divider" data-aos="fade-up"></div>
@@ -245,7 +287,7 @@
         </footer>
     </div>
 
-    <audio id="lagu" loop>
+    <audio id="lagu" autoplay loop>
         <source src="lagu_wed.mp3" type="audio/mpeg">
     </audio>
 
@@ -259,6 +301,19 @@
         
         const lagu = document.getElementById('lagu');
         let isPlaying = false;
+
+        // Script untuk mencoba autoplay segera setelah halaman dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            let playPromise = lagu.play();
+            if (playPromise !== undefined) {
+                playPromise.then(_ => {
+                    isPlaying = true;
+                    document.getElementById('icon-music').style.animation = "spin 3s linear infinite";
+                }).catch(error => {
+                    console.log("Autoplay diblokir oleh browser. Menunggu interaksi pengguna...");
+                });
+            }
+        });
 
         function playLagu() {
             if (!isPlaying) {
@@ -281,7 +336,7 @@
             }
         }
 
-        // AUTO PLAY: Picu saat pertama kali user berinteraksi
+        // Fallback: Picu saat pertama kali user berinteraksi jika autoplay gagal
         window.addEventListener('scroll', playLagu, { once: true });
         window.addEventListener('click', playLagu, { once: true });
         window.addEventListener('touchstart', playLagu, { once: true });
@@ -310,8 +365,5 @@
             .finally(() => { btn.disabled = false; btn.innerText = "Kirim Konfirmasi"; loading.style.display = "none"; });
         }
     </script>
-    <style>
-        @keyframes spin { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
-    </style>
 </body>
 </html>
